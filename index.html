@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reservatório de Vale Azul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- ===== INTRO ===== -->
+  <section class="scene active" id="scene-intro">
+    <div class="layout">
+      <div>
+        <p class="eyebrow-place">Estação Central de Água · Vale Azul</p>
+        <h1 class="display">O reservatório está secando.</h1>
+        <p class="lede" id="intro-text">
+          Carregando missão...
+        </p>
+        <button class="primary" id="btn-start">Iniciar missão</button>
+      </div>
+      <div class="tank-wrap">
+        <div class="tank-level-num" id="intro-level">0%</div>
+        <svg class="tank" viewBox="0 0 200 300" aria-hidden="true">
+          <defs>
+            <clipPath id="clipIntro"><rect x="14" y="20" width="172" height="260" rx="14"/></clipPath>
+          </defs>
+          <rect class="tank-outline" x="14" y="20" width="172" height="260" rx="14"/>
+          <g clip-path="url(#clipIntro)">
+            <rect class="water-fill" id="water-intro" x="14" y="280" width="172" height="0"/>
+          </g>
+        </svg>
+        <div class="tank-label">Nível do reservatório</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIZ ===== -->
+  <section class="scene" id="scene-quiz">
+    <div class="layout">
+      <div>
+        <div class="quiz-meta">
+          <p class="eyebrow-place" id="quiz-name-tag">Missão em andamento</p>
+          <span class="quiz-count" id="quiz-count">Pergunta 1 de 10</span>
+        </div>
+        <h2 class="question" id="question-text">Pergunta...</h2>
+        <div class="choices" id="choices"></div>
+        <div class="feedback" id="feedback">
+          <span class="tag" id="feedback-tag">Boa escolha.</span>
+          <div id="feedback-text"></div>
+        </div>
+        <div class="next-row">
+          <button class="primary" id="btn-next" style="display:none;">Próxima pergunta</button>
+        </div>
+      </div>
+      <div class="tank-wrap">
+        <div class="tank-level-num" id="quiz-level">0%</div>
+        <svg class="tank" viewBox="0 0 200 300" aria-hidden="true">
+          <defs>
+            <clipPath id="clipQuiz"><rect x="14" y="20" width="172" height="260" rx="14"/></clipPath>
+          </defs>
+          <rect class="tank-outline" x="14" y="20" width="172" height="260" rx="14"/>
+          <g clip-path="url(#clipQuiz)">
+            <rect class="water-fill" id="water-quiz" x="14" y="280" width="172" height="0"/>
+            <g class="wave-shape" id="wave-quiz" opacity="0.35">
+              <path d="M14,280 q15,-6 30,0 t30,0 t30,0 t30,0 t30,0 t30,0 v40 h-180 z" fill="#0E2B29"/>
+            </g>
+          </g>
+        </svg>
+        <div class="tank-label">Nível do reservatório</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== END ===== -->
+  <section class="scene" id="scene-end">
+    <div class="layout">
+      <div>
+        <p class="eyebrow-place">Missão concluída</p>
+        <h1 class="display" id="end-title">Resultado</h1>
+        <div class="score-line">
+          <span class="score-num" id="end-score">0</span>
+          <span class="score-of" id="end-of">de 10 acertos</span>
+        </div>
+        <p class="lede" id="end-text">Texto final...</p>
+        <button class="primary" id="btn-again">Jogar novamente</button>
+      </div>
+      <div class="tank-wrap">
+        <div class="tank-level-num" id="end-level">0%</div>
+        <svg class="tank" viewBox="0 0 200 300" aria-hidden="true">
+          <defs>
+            <clipPath id="clipEnd"><rect x="14" y="20" width="172" height="260" rx="14"/></clipPath>
+          </defs>
+          <rect class="tank-outline" x="14" y="20" width="172" height="260" rx="14"/>
+          <g clip-path="url(#clipEnd)">
+            <rect class="water-fill" id="water-end" x="14" y="280" width="172" height="0"/>
+          </g>
+        </svg>
+        <div class="tank-label">Nível do reservatório</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
